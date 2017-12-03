@@ -1,0 +1,38 @@
+#login_form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 10px Verdana, Helvetica, sans-serif;
+}
+
+input {
+    margin:0; 
+    padding:0; 
+    color:black;
+}
+
+div.login_form {
+    margin: 0 auto;
+    width: 300;
+}
+
+div.login_form span {
+    display: block;
+    color:#bbbbbb;
+    font-size:12px;
+    float:left;
+    width:100px;
+    text-align:right;
+    padding:5px 20px 0 0;
+}
+
+div.login_form .button{
+    margin:0 0 10px 0;
+    padding:4px 7px;
+    position: relative;
+    top:10px;
+    left:120px;
+    width:100px;
+}
