@@ -4,16 +4,18 @@
 </html>
 <?php
 echo '
-<script type="text/javascript">
-function clean(e){        
-var textField = document.getElementById(e);
-var regex = /[^a-z 0-9?!.,]/gi;
-if (textField.value.search(regex) > - 1){
-document.getElementById('status').innerHTML = "nieprawidłowy login";
-}else {
-document.getElementById('status').innerHTML = "ok";
+<script>
+function formValidation(){
+var loginValues, text;
+loginValues = document.getElementById("login").value;
+if(loginValues < 1 || loginValues > 10) {
+text = "Nieprawidłowe dane";
+document.getElementById("loginMessage").innerHTML = text;
+return false;
+} else {
+return true;
 }
-textField.value = textField.value.replace(regex,"");
+
 }
 </script>
 
@@ -23,11 +25,9 @@ textField.value = textField.value.replace(regex,"");
 </head>
 <body>
 <div class="login_form">
-<form method="POST" action="rejestracja.php">
-<span>Login:</span> <input type="text" id="ta" onekeyup="clean('ta')" onekeydown="clean('ta')" name="login"><br><br>
-<div id="status"></div>
-<span>Hasło:</span> <input type="password" name="haslo"><br><br>
-<span>Email:</span> <input type="text" name="email"><br><br>
+<form method="POST" action="rejestracja.php" onsubmit="return formValidation()">
+<span>Login:</span> <input id="login" type="text" name="login" required><br><br>
+<p id="loginMessage"></p>
 <input class="button" type="submit" value="Utwórz konto" name="rejestruj">
 </form>
 </div>

@@ -28,6 +28,15 @@ div.login_form span {
     padding:5px 20px 0 0;
 }
 
+div.login_form p {
+    color:red;
+    font-size:12px;
+    margin:0 0 10px 0;
+    position: relative;
+    left:120px;
+    width:180px;
+}
+
 div.login_form .button{
     margin:0 0 10px 0;
     padding:4px 7px;
