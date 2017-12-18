@@ -3,14 +3,38 @@
     <meta charset="UTF-8">
 </html>
 <script>
-    function fieldValidation(e) {
-        const message = document.getElementById('message');
+    function loginValidation(e) {
+        const message = document.getElementById('loginMessage');
         const re = /^[a-zA-Z]+$/;
         if (e !== '' && !re.test(e)) {
             message.innerText = "Nieprawidłowe dane";
+            message.style.color = "red";
+            return false;
+        } else if (e == '') {
+            message.style.color = "red";
+            message.innerText = 'To pole nie może być puste!'
             return false;
         } else {
-            message.innerText = ''
+            message.style.color = "green";
+            message.innerText = 'Login poprawny'
+            return true;
+        }
+    }
+    
+    function passValidation(e) {
+        const message = document.getElementById('passMessage');
+        const re = /^[a-zA-Z]+$/;
+        if (e !== '' && !re.test(e)) {
+            message.innerText = "Nieprawidłowe dane";
+            message.style.color = "red";
+            return false;
+        } else if (e == '') {
+            message.style.color = "red";
+            message.innerText = 'To pole nie może być puste!'
+            return false;
+        } else {
+            message.style.color = "green";
+            message.innerText = 'Haslo poprawne'
             return true;
         }
     }
@@ -20,7 +44,7 @@
         const re = /^[a-zA-Z]+$/;
         loginValues = document.getElementById("login").value;
         if (loginValues !== '' && !re.test(loginValues) || loginValues == '') {
-            document.getElementById("loginMessage").innerHTML = "Wprowadź poprawne dane!";
+             alert("Wprowadź poprawne dane!");
             return false;
         } else {
             return true;
@@ -34,10 +58,13 @@
 <body>
     <div class="login_form">
         <form method="POST" action="rejestracja.php" onsubmit="return formValidation()">
-            <span>Login:</span> <input id="login" type="text" name="login" onkeyup="fieldValidation(this.value)"><br><br>
-            <p id="loginMessage"></p>
-            <input class="button" type="submit" value="Utwórz konto" name="rejestruj"><br><br>
-            <p id="message"></p>
+            <span>Login:</span> 
+            <span><input id="login" type="text" name="login" onkeyup="loginValidation(this.value)"></span><br>
+            <p id="loginMessage"></p><br>
+            <span>Hasło:</span> 
+            <span><input id="haslo" type="password" name="haslo" onkeyup="passValidation(this.value)"></span><br>
+            <p id="passMessage"></p><br>
+            <span><input class="button" type="submit" value="Utwórz konto" name="rejestruj"></span>
         </form>
     </div>
 </body>
