@@ -64,6 +64,9 @@
             <span>Hasło:</span> 
             <span><input id="haslo" type="password" name="haslo" onkeyup="passValidation(this.value)"></span><br>
             <p id="passMessage"></p><br>
+            <span>e-mail:</span> 
+            <span><input id="email" type="text" name="email"></span><br>
+            <br>
             <span><input class="button" type="submit" value="Utwórz konto" name="rejestruj"></span>
         </form>
     </div>
