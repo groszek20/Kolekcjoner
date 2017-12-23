@@ -1,7 +1,7 @@
 <?php
-
 class DatabaseManager {
-    private function getConnection(){
+    
+    static public function getConnection(){
         $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PW, DB_DB);
         if (mysqli_connect_errno()) {
             $connection_errno = mysqli_connect_errno();
@@ -14,8 +14,18 @@ class DatabaseManager {
         }
     }
     
-    public function setUsers($username, $password, $mail){
-        
+    static public function setUsers($username, $password, $mail){
+        $password = md5($password);
+        $SQLQuery = "INSERT INTO `users` (`username`, `password`, `mail`) VALUES ('".$username."', '".$password."', '".$mail."')";
+        $connection = self::getConnection();
+        $SQL = $connection->real_escape_string($SQLQuery);
+        $result = $connection->query($SQL);
+        if(!$result) {
+            echo "Wstawienie nowego elementu nie powiodło się ", __LINE__, " ", __FILE__;
+        } else {
+            return true;
+        }
+        mysqli_close($connection);
     }
     
     
