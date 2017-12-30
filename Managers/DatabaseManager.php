@@ -1,4 +1,6 @@
 <?php
+require_once 'LogFile.php';
+require_once 'config.php';
 class DatabaseManager {
     
     static public function getConnection(){
@@ -7,6 +9,7 @@ class DatabaseManager {
             $connection_errno = mysqli_connect_errno();
             $connection_error = mysqli_connect_error();
             LogFile::AddLog("Wystąpił błąd połączenia [$$connection_errno] [ $connection_error]", __LINE__, __FILE__);
+            echo 'Wystąpił błąd połączenia'.__LINE__.__FILE__;
             exit();
         } else {
             $connection->query("SET NAMES 'utf8'");
@@ -15,11 +18,9 @@ class DatabaseManager {
     }
     
     static public function setUsers($username, $password, $mail){
-        $password = md5($password);
-        $SQLQuery = "INSERT INTO `users` (`username`, `password`, `mail`) VALUES ('".$username."', '".$password."', '".$mail."')";
+        $SQLQuery = "INSERT INTO `users` (`username`, `password`, `mail`) VALUES ('{$username}','".md5("{$password}")."','{$mail}')";
         $connection = self::getConnection();
-        $SQL = $connection->real_escape_string($SQLQuery);
-        $result = $connection->query($SQL);
+        $result = $connection->query($SQLQuery);
         if(!$result) {
             echo "Wstawienie nowego elementu nie powiodło się ", __LINE__, " ", __FILE__;
         } else {

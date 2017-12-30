@@ -57,7 +57,7 @@
 </head>
 <body>
     <div class="login_form">
-        <form method="POST" action="rejestracja.php" onsubmit="return formValidation()">
+        <form method="POST" action="Library/registry.php" onsubmit="return formValidation()">
             <span>Login:</span> 
             <span><input id="login" type="text" name="login" onkeyup="loginValidation(this.value)"></span><br>
             <p id="loginMessage"></p><br>
