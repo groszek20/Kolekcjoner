@@ -13,12 +13,12 @@ input {
     color:black;
 }
 
-div.login_form {
+/*div.login_form {
     margin: 0 auto;
     width: 300;
-}
+}*/
 
-div.login_form span {
+/*div.login_form span {
     display: block;
     color:#bbbbbb;
     font-size:12px;
@@ -26,22 +26,21 @@ div.login_form span {
     width:100px;
     text-align:right;
     padding:5px 20px 0 0;
-}
+}*/
 
-div.login_form p {
+/*div.login_form p {
     color:red;
     font-size:12px;
-    margin:0 0 10px 0;
     position: relative;
-    left:120px;
-    width:180px;
-}
+    left: 300px;
+    top: 3px;
 
-div.login_form .button{
+}*/
+
+/*div.login_form .button{
     margin:0 0 10px 0;
     padding:4px 7px;
-    position: relative;
-    top:10px;
-    left:120px;
-    width:100px;
-}
+    position: absolute;
+    top:70px;
+    left:127px;
+}*/
