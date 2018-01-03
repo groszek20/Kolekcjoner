@@ -29,5 +29,7 @@ class DatabaseManager {
         mysqli_close($connection);
     }
     
+    static 
+    
     
 }
