@@ -41,29 +41,26 @@ class DatabaseManager {
         return true;
     }
 
-    static public function getUser() {
-        $sqlQuery = "SELECT username FROM users WHERE username='Zenek'";
+    static public function getUser($username) {
+        $login = self::filtering($username);
+        $sqlQuery = "SELECT username FROM users WHERE username='$login'";
         $conn = self::getConnection();
-        $SQL = $conn->real_escape_string($sqlQuery);
-        $result = $conn->query($SQL);
-
-        if (!$result) {
+        $result = $conn->query($sqlQuery);
+        $row = $result->fetch_assoc();
+        mysqli_close($conn);
+        if ($row == null) {
             LogFile::AddLog("Wystąpił błąd połączenia [$conn_errno] [ $conn_error]", __LINE__, __FILE__);
             return false;
         } else {
-            $resultArray = Array();
-            while (($row = $result->fetch_array(MYSQLI_ASSOC)) != NULL) {
-                $resultArray[] = $row;
-            }
+            return $row;
         }
+    }
 
-        if (count($resultArray) > 0) {
-            return $resultArray;
-        } else {
-            echo "pusty wynik";
-            return false;
+    static private function filtering($variable) {
+        if (get_magic_quotes_gpc()) {
+            $variable = stripslashes($variable);
         }
-        mysqli_close($conn);
+        return mysql_real_escape_string(htmlspecialchars(trim($variable)));
     }
 
 }

@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Adam/Documents/NetBeansProjects/FirstPhpProject/index.php</file>
-            <file>file:/C:/Users/Adam/Documents/NetBeansProjects/FirstPhpProject/DatabaseManager.class.php</file>
-            <file>file:/C:/Users/Adam/Documents/NetBeansProjects/FirstPhpProject/index_1.php</file>
+            <file>file:/C:/WebServ/httpd/kolekcjoner/registryform.php</file>
+            <file>file:/C:/WebServ/httpd/kolekcjoner/registry.php</file>
+            <file>file:/C:/WebServ/httpd/kolekcjoner/Managers/DatabaseManager.php</file>
+            <file>file:/C:/WebServ/httpd/kolekcjoner/logging.php</file>
+            <file>file:/C:/WebServ/httpd/kolekcjoner/loggingform.php</file>
         </group>
     </open-files>
 </project-private>
