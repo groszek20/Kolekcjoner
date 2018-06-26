@@ -8,6 +8,16 @@
 </head>
 <body>
     Strona startowa<br>
-    <a href="registryform.php">Zarejestruj się</a><br>
-    <a href="loggingform.php">Logowanie</a>
+    <a href="register/registryform.php">Zarejestruj się</a><br>
 </body>
+<?php 
+session_start();
+if (isset($_SESSION['username'])) {
+    echo "Jesteś zalogowany jako: ".$_SESSION['username']."<br>";
+    echo '<a href="login/logoutform.php">Wyloguj</a><br>';
+} else {
+    echo "Jesteś zalogowany jako gość<br>";
+    echo '<a href="login/loggingform.php">Logowanie</a><br>';
+}
+
+?>
