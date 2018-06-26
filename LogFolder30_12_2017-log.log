@@ -1,5 +1,0 @@
-Plik dziennika [ 30/12/2017 ]
----------------------------------------
-
-+ [13:25:49][::1][plik C:\WebServ\httpd\kolekcjoner\Managers\DatabaseManager.php][linia #10]: Wystąpił błąd połączenia [$2002] [ php_network_getaddresses: getaddrinfo failed: Nieznany host. ]
-+ [13:33:37][::1][plik C:\WebServ\httpd\kolekcjoner\Managers\DatabaseManager.php][linia #11]: Wystąpił błąd połączenia [$2002] [ php_network_getaddresses: getaddrinfo failed: Nieznany host. ]

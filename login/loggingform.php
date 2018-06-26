@@ -13,7 +13,7 @@
             <span><input id="login" type="text" name="login" onkeyup="loginValidation(this.value)"></span><br>
             <p id="loginMessage"></p><br>
             <span>Hasło:</span> 
-            <span><input id="haslo" type="password" name="haslo" onkeyup="passValidation(this.value)"></span><br>
+            <span><input id="log_password" type="password" name="log_password" onkeyup="passValidation(this.value)"></span><br>
             <p id="passMessage"></p><br>
             <br>
             <span><input class="button" type="submit" value="Loguj" name="logging"></span>
