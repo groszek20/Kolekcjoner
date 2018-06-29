@@ -22,8 +22,12 @@ if (isset($_POST['emailId'])) {
        <input class="button" type="submit" name="login-submit" id="mail-submit" value="Zapisz zmiany" />
        </form>';
 }
-$mail = $_POST['emailId'];
-DatabaseManager::setEmail("Witek", $mail);
+if (isset($_POST['emailId']) && isset($_SESSION['username'])) {
+    $mail = $_POST['emailId'];
+    unset($_POST['emailId']);
+    $user = $_SESSION['username'];
+    DatabaseManager::setEmail($user, $mail);
+}
 ?>
 
 

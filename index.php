@@ -6,25 +6,24 @@
     <link rel="stylesheet" href="css/screen.css" media="screen" type="text/css"  />
     <meta charset="UTF-8">
 </head>
-<div id="navbar">
-    <a href="#rejsestracja">Rejestracja</a>
-    <a href="#logowanie">Logowanie</a>
-    <a href="#mojedane">Moje dane</a>
-</div>
 <body>
-    Strona startowa<br>
-    <a href="register/registryform.php">Zarejestruj się</a><br>
 </body>
 <?php 
 session_start();
 if (isset($_SESSION['username'])) {
     echo "Jesteś zalogowany jako: ".$_SESSION['username']."<br>";
-    echo '<a href="login/logoutform.php">Wyloguj</a><br>';
-    echo '<a href="account/myAccount.php">Moje dane</a><br>';
+    echo '<div id="navbar">
+    <a href="register/registryform.php">Rejestracja</a>
+    <a href="login/logoutform.php">Wyloguj</a>
+    <a href="account/myAccount.php">Moje dane</a>
+</div>';
 } else {
     echo "Jesteś zalogowany jako gość<br>";
-    echo '<a href="login/loggingform.php">Logowanie</a><br>';
-    echo '<a href="account/myAccount.php">Moje dane</a><br>';
+    echo '<div id="navbar">
+    <a href="register/registryform.php">Rejestracja</a>
+    <a href="login/loggingform.php">Logowanie</a>
+    <a href="account/myAccount.php">Moje dane</a>
+</div>';
 }
 
 ?>

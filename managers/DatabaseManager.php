@@ -44,7 +44,7 @@ class DatabaseManager {
     static public function setEmail($username, $mail) {
         $message = "Wstawienie nowego elementu nie powiodło się ";
         $sqlQuery = "
-            UPDATE `users` SET `mail`='$mail' WHERE username='Witek'
+            UPDATE `users` SET `mail`='$mail' WHERE username='$username'
         ";
         $connection = self::getConnection();
         $sql = $connection->real_escape_string($sqlQuery);
