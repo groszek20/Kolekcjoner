@@ -40,6 +40,24 @@ class DatabaseManager {
         mysqli_close($connection);
         return true;
     }
+    
+    static public function setEmail($username, $mail) {
+        $message = "Wstawienie nowego elementu nie powiodło się ";
+        $sqlQuery = "
+            UPDATE `users` SET `mail`='$mail' WHERE username='Witek'
+        ";
+        $connection = self::getConnection();
+        $sql = $connection->real_escape_string($sqlQuery);
+        $result = $connection->query($sqlQuery);
+        if (!$result) {
+            echo $message;
+            LogFile::AddLog($message, __LINE__, __FILE__);
+            return false;
+        }
+        mysqli_close($connection);
+        return true;
+    }
+
 
     static public function getUser($username) {
         $login = self::filtering($username);
@@ -76,7 +94,7 @@ class DatabaseManager {
     static public function getAcces($login, $password) {
         $login = self::filtering($login);
         $password = md5($password);
-        $sqlQuery = "SELECT username FROM users WHERE username='$login' AND password='$password'";
+        $sqlQuery = "SELECT * FROM users WHERE username='$login' AND password='$password'";
         $conn = self::getConnection();
         $result = $conn->query($sqlQuery);
         $row = $result->fetch_assoc();
