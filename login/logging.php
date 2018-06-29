@@ -11,13 +11,11 @@ $row = DatabaseManager::getUser($login);
 $haslo = DatabaseManager::getPassword($pass);
 $acces = DatabaseManager::getAcces($login, $pass);
 $_SESSION['username'] = $acces['username'];
+$_SESSION['mail'] = $acces['mail'];
+
 if (!$acces) {
     echo "Nieprawidłowy login lub hasło<br />";
 } else {
-    echo "Twój login POST: ".$login."<br />";
-    echo "Twoje hasło POST: ".$pass."<br />";
-    echo " Acces z bazy USERNAME : ".$acces['username']."<br />";
-    
     header('Location: /kolekcjoner/');
 }
 

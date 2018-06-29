@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 </html>
 <?php
-require_once 'Managers/DatabaseManager.php';
+require_once "C:/WebServ/httpd/kolekcjoner/managers/DatabaseManager.php";;
 
 $login = $_POST['login'];
 $haslo = $_POST['haslo'];
