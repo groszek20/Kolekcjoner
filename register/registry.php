@@ -5,8 +5,8 @@
 <?php
 require_once "C:/WebServ/httpd/kolekcjoner/managers/DatabaseManager.php";;
 
-$login = $_POST['login'];
-$haslo = $_POST['haslo'];
+$login = $_POST['username'];
+$haslo = $_POST['password'];
 $email = $_POST['email'];
 
 DatabaseManager::setUsers($login, $haslo, $email);
