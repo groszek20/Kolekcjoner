@@ -94,7 +94,7 @@ class Registry {
 //    </div>';
 
         echo '<div id="login_form">
-<form method="POST" action="registry.php" onsubmit="return formValidation()">
+            <form method="POST" action="register/registry.php" onsubmit="return formValidation()">
 <label id="loginMessage" for="username">Nazwa użytkownika:</label>
 <input type="text" id="username" name="username" onkeyup="loginValidation(this.value)">
 <label id="passMessage" for="password">Hasło:</label>
